@@ -11,7 +11,7 @@ goBackButton.addEventListener('click', () => {
   menuButton.classList.remove('open');
 });
 
-//menuの項目クリック時にwindowを移動させる
+//menuの項目クリック時にwindowを移動させる処理
 const toProfile = document.querySelectorAll('#to-profile');
 const profileHeight = document.querySelector('.profile').offsetTop;
 const toSkills = document.querySelectorAll('#to-skills');
