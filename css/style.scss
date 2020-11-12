@@ -259,6 +259,10 @@ main .skills {
       & p {
         display: inline;
         vertical-align: top;
+
+        & span {
+          vertical-align: top;
+        }
       }
     }
   }
