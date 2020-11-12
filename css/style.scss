@@ -254,15 +254,12 @@ main .skills {
       & img {
         width: 25px;
         height: 25px;
+        vertical-align: bottom;
+        transform: translateY(3px);
       }
 
       & p {
         display: inline;
-        vertical-align: top;
-
-        & span {
-          vertical-align: top;
-        }
       }
     }
   }
