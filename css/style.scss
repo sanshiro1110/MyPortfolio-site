@@ -47,8 +47,14 @@ ul {
   width: 400px;
   height: 100vh;
   transform: translateX(-75%);
-  transition: all 0.5s cubic-bezier(0.80, 0.0, 0.20, 1.0);
+  transition: all 0.7s cubic-bezier(0.8, 0.07, 0.2, 0.93);
   font-size: 18px;
+  opacity: 0;
+
+
+  &.inview {
+    opacity: 1;
+  }
 
   &:before {
     content: "";
@@ -59,6 +65,7 @@ ul {
     z-index: -10;
     transition: opacity 0.5s;
   }
+
   &:after {
     content: "";
     width: 99.5%;
@@ -80,18 +87,18 @@ ul {
 
   & .menu {
     position: absolute;
-    top: 20px;
-    right: 15px;
+    top: 30px;
+    right: 10px;
     cursor: pointer;
 
     & .menu-border {
 
       & span {
         display: block;
-        width: 20px;
+        width: 30px;
         height: 3px;
         background-color: $cBlack;
-        margin-top: 5px;
+        margin-top: 8px;
         transition: all 0.5s;
 
         &:nth-child(1) {
@@ -104,15 +111,13 @@ ul {
     }
     &.open .menu-border {
       & span:nth-child(1) {
-        width: 25px;
-        transform: translate(0px, 8px) rotate(135deg);
+        transform: translate(0px, 11px) rotate(135deg);
       }
       & span:nth-child(2) {
         opacity: 0;
       }
       & span:nth-child(3) {
-        width: 25px;
-        transform: translate(0px, -8px) rotate(-135deg);
+        transform: translate(0px, -11px) rotate(-135deg);
       }
     }
 
@@ -125,7 +130,7 @@ ul {
 
   .go-back-button {
     position: absolute;
-    top: 4.4%;
+    top: 6%;
     left: 10%;
     font-size: 14px;
     letter-spacing: 1px;
@@ -196,11 +201,61 @@ main .home {
   color: $cBlack;
 
   & .title {
+
     & h1 {
+
       margin-top: 20px;
-      letter-spacing: 8px;
+      letter-spacing: 6px;
       font-size: 45px;
+
+      & .char {
+        opacity: 0;
+        display: inline-block;
+      }
+
+      &.inview {
+
+        & .char {
+          animation: kf-string-animation 0.4s ease-out forwards;
+          @for $i from 1 through 9 {
+            &:nth-child(#{$i}) {
+              animation-delay: $i * 0.1s;
+            }
+          }
+        }
+      }
     }
+
+    & p {
+      & .char {
+        opacity: 0;
+        display: inline-block;
+      }
+
+      &.inview {
+
+        & .char {
+          animation: kf-string-animation 0.3s ease-out forwards;
+          @for $i from 1 through 18 {
+            &:nth-child(#{$i}) {
+              animation-delay: $i * 0.03s;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@keyframes kf-string-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -398,24 +453,26 @@ main .contact {
 //ipadPro縦用css
 @media screen and (max-width: 1024px) {
   .menu-content {
-    transform: translateX(-65%);
+    transform: translateX(-72%);
 
     & .menu {
-      top: 50px;
+      top: 40px;
 
       & .menu-border span {
         width: 30px;
         margin-top: 8px;
       }
 
-      &.open .menu-border span {
-        width: 35px;
+      &.open {
+        & .menu-border span {
+          width: 35px;
 
-        &:nth-child(1) {
-          transform: translate(0, 11px) rotate(135deg);
-        }
-        &:nth-child(3) {
-          transform: translate(0, -11px) rotate(-135deg);
+          &:nth-child(1) {
+            transform: translate(0, 11px) rotate(135deg);
+          }
+          &:nth-child(3) {
+            transform: translate(0, -11px) rotate(-135deg);
+          }
         }
       }
     }
@@ -454,6 +511,22 @@ main .contact {
 
     & .menu {
       top: 30px;
+
+      & .menu-border span {
+        width: 20px;
+        margin-top: 5px;
+      }
+
+      &.open .menu-border span {
+        &:nth-child(1) {
+          width: 25px;
+          transform: translate(0px, 8px) rotate(135deg);
+        }
+        &:nth-child(3) {
+          width: 25px;
+          transform: translate(0px, -8px) rotate(-135deg);
+        }
+      }
     }
   }
 

@@ -44,9 +44,14 @@ ul {
   height: 100vh;
   -webkit-transform: translateX(-75%);
           transform: translateX(-75%);
-  -webkit-transition: all 0.5s cubic-bezier(0.8, 0, 0.2, 1);
-  transition: all 0.5s cubic-bezier(0.8, 0, 0.2, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.8, 0.07, 0.2, 0.93);
+  transition: all 0.7s cubic-bezier(0.8, 0.07, 0.2, 0.93);
   font-size: 18px;
+  opacity: 0;
+}
+
+.menu-content.inview {
+  opacity: 1;
 }
 
 .menu-content:before {
@@ -83,17 +88,17 @@ ul {
 
 .menu-content .menu {
   position: absolute;
-  top: 20px;
-  right: 15px;
+  top: 30px;
+  right: 10px;
   cursor: pointer;
 }
 
 .menu-content .menu .menu-border span {
   display: block;
-  width: 20px;
+  width: 30px;
   height: 3px;
   background-color: #000;
-  margin-top: 5px;
+  margin-top: 8px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -109,9 +114,8 @@ ul {
 }
 
 .menu-content .menu.open .menu-border span:nth-child(1) {
-  width: 25px;
-  -webkit-transform: translate(0px, 8px) rotate(135deg);
-          transform: translate(0px, 8px) rotate(135deg);
+  -webkit-transform: translate(0px, 11px) rotate(135deg);
+          transform: translate(0px, 11px) rotate(135deg);
 }
 
 .menu-content .menu.open .menu-border span:nth-child(2) {
@@ -119,9 +123,8 @@ ul {
 }
 
 .menu-content .menu.open .menu-border span:nth-child(3) {
-  width: 25px;
-  -webkit-transform: translate(0px, -8px) rotate(-135deg);
-          transform: translate(0px, -8px) rotate(-135deg);
+  -webkit-transform: translate(0px, -11px) rotate(-135deg);
+          transform: translate(0px, -11px) rotate(-135deg);
 }
 
 .menu-content .menu p {
@@ -133,7 +136,7 @@ ul {
 
 .menu-content .go-back-button {
   position: absolute;
-  top: 4.4%;
+  top: 6%;
   left: 10%;
   font-size: 14px;
   letter-spacing: 1px;
@@ -213,8 +216,189 @@ main .home {
 
 main .home .title h1 {
   margin-top: 20px;
-  letter-spacing: 8px;
+  letter-spacing: 6px;
   font-size: 45px;
+}
+
+main .home .title h1 .char {
+  opacity: 0;
+  display: inline-block;
+}
+
+main .home .title h1.inview .char {
+  -webkit-animation: kf-string-animation 0.4s ease-out forwards;
+          animation: kf-string-animation 0.4s ease-out forwards;
+}
+
+main .home .title h1.inview .char:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+main .home .title h1.inview .char:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+main .home .title h1.inview .char:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+main .home .title h1.inview .char:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+main .home .title h1.inview .char:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+main .home .title h1.inview .char:nth-child(6) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+main .home .title h1.inview .char:nth-child(7) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+main .home .title h1.inview .char:nth-child(8) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+main .home .title h1.inview .char:nth-child(9) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+main .home .title p .char {
+  opacity: 0;
+  display: inline-block;
+}
+
+main .home .title p.inview .char {
+  -webkit-animation: kf-string-animation 0.3s ease-out forwards;
+          animation: kf-string-animation 0.3s ease-out forwards;
+}
+
+main .home .title p.inview .char:nth-child(1) {
+  -webkit-animation-delay: 0.03s;
+          animation-delay: 0.03s;
+}
+
+main .home .title p.inview .char:nth-child(2) {
+  -webkit-animation-delay: 0.06s;
+          animation-delay: 0.06s;
+}
+
+main .home .title p.inview .char:nth-child(3) {
+  -webkit-animation-delay: 0.09s;
+          animation-delay: 0.09s;
+}
+
+main .home .title p.inview .char:nth-child(4) {
+  -webkit-animation-delay: 0.12s;
+          animation-delay: 0.12s;
+}
+
+main .home .title p.inview .char:nth-child(5) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+main .home .title p.inview .char:nth-child(6) {
+  -webkit-animation-delay: 0.18s;
+          animation-delay: 0.18s;
+}
+
+main .home .title p.inview .char:nth-child(7) {
+  -webkit-animation-delay: 0.21s;
+          animation-delay: 0.21s;
+}
+
+main .home .title p.inview .char:nth-child(8) {
+  -webkit-animation-delay: 0.24s;
+          animation-delay: 0.24s;
+}
+
+main .home .title p.inview .char:nth-child(9) {
+  -webkit-animation-delay: 0.27s;
+          animation-delay: 0.27s;
+}
+
+main .home .title p.inview .char:nth-child(10) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+main .home .title p.inview .char:nth-child(11) {
+  -webkit-animation-delay: 0.33s;
+          animation-delay: 0.33s;
+}
+
+main .home .title p.inview .char:nth-child(12) {
+  -webkit-animation-delay: 0.36s;
+          animation-delay: 0.36s;
+}
+
+main .home .title p.inview .char:nth-child(13) {
+  -webkit-animation-delay: 0.39s;
+          animation-delay: 0.39s;
+}
+
+main .home .title p.inview .char:nth-child(14) {
+  -webkit-animation-delay: 0.42s;
+          animation-delay: 0.42s;
+}
+
+main .home .title p.inview .char:nth-child(15) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+
+main .home .title p.inview .char:nth-child(16) {
+  -webkit-animation-delay: 0.48s;
+          animation-delay: 0.48s;
+}
+
+main .home .title p.inview .char:nth-child(17) {
+  -webkit-animation-delay: 0.51s;
+          animation-delay: 0.51s;
+}
+
+main .home .title p.inview .char:nth-child(18) {
+  -webkit-animation-delay: 0.54s;
+          animation-delay: 0.54s;
+}
+
+@-webkit-keyframes kf-string-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes kf-string-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 main .profile {
@@ -448,11 +632,11 @@ main .contact .copyright {
 
 @media screen and (max-width: 1024px) {
   .menu-content {
-    -webkit-transform: translateX(-65%);
-            transform: translateX(-65%);
+    -webkit-transform: translateX(-72%);
+            transform: translateX(-72%);
   }
   .menu-content .menu {
-    top: 50px;
+    top: 40px;
   }
   .menu-content .menu .menu-border span {
     width: 30px;
@@ -495,6 +679,20 @@ main .contact .copyright {
   }
   .menu-content .menu {
     top: 30px;
+  }
+  .menu-content .menu .menu-border span {
+    width: 20px;
+    margin-top: 5px;
+  }
+  .menu-content .menu.open .menu-border span:nth-child(1) {
+    width: 25px;
+    -webkit-transform: translate(0px, 8px) rotate(135deg);
+            transform: translate(0px, 8px) rotate(135deg);
+  }
+  .menu-content .menu.open .menu-border span:nth-child(3) {
+    width: 25px;
+    -webkit-transform: translate(0px, -8px) rotate(-135deg);
+            transform: translate(0px, -8px) rotate(-135deg);
   }
   main > div .container {
     padding: 0 0 50px 0;

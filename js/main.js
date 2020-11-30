@@ -52,3 +52,38 @@ for(let i = 0; i < toProfile.length; i ++) {
     });
   });
 }
+
+//load時のアニメーション
+
+const titleParagraph = document.querySelector('#title p');
+const titleH1 = document.querySelector('#title h1');
+const paragraphString = titleParagraph.innerHTML.trim();
+const h1String = titleH1.innerHTML.trim();
+
+function spanAdd(string) {
+  let concutString = '';
+  for(let c of string) {
+    c = c.replace(' ', '&nbsp;');
+    concutString += `<span class="char">${c}</span>`;
+  }
+  return concutString;
+}
+
+titleParagraph.innerHTML = spanAdd(paragraphString);
+titleH1.innerHTML = spanAdd(h1String);
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#title p').classList.add('inview');
+  setTimeout(() => {
+    document.querySelector('#title h1').classList.add('inview');
+    setTimeout(() => {
+      menuContent.classList.add('inview');
+      menuContent.classList.add('open');
+      menuButton.classList.add('open');
+      setTimeout(() => {
+        menuContent.classList.remove('open');
+        menuButton.classList.remove('open');
+      }, 1000);
+    }, 1500);
+  }, 1000);
+});
