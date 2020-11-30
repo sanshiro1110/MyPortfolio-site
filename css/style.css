@@ -1,3 +1,51 @@
+@-webkit-keyframes kf-string-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes kf-string-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes kf-rolling-animation {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes kf-rolling-animation {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -191,12 +239,14 @@ ul {
 
 main > div {
   height: 100vh;
+  padding-top: 45px;
 }
 
 main > div h2 {
-  padding-top: 6.2%;
   font-size: 30px;
   margin-bottom: 10%;
+  line-height: 1.2;
+  letter-spacing: 5px;
 }
 
 main .home {
@@ -375,35 +425,75 @@ main .home .title p.inview .char:nth-child(18) {
           animation-delay: 0.54s;
 }
 
-@-webkit-keyframes kf-string-animation {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-70%);
-            transform: translateY(-70%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes kf-string-animation {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-70%);
-            transform: translateY(-70%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 main .profile {
-  background-color: #333;
+  background-color: #555;
   color: #fff;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+main .profile h2 {
+  overflow: hidden;
+  position: relative;
+}
+
+main .profile h2 .removeItem {
+  color: #ccc;
+}
+
+main .profile h2 .showItem {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main .profile h2 .char {
+  display: inline-block;
+}
+
+main .profile.rolling {
+  background-color: #333;
+}
+
+main .profile.rolling h2 .char {
+  -webkit-animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+          animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+main .profile.rolling h2 .char:nth-child(1) {
+  -webkit-animation-delay: 0.02s;
+          animation-delay: 0.02s;
+}
+
+main .profile.rolling h2 .char:nth-child(2) {
+  -webkit-animation-delay: 0.04s;
+          animation-delay: 0.04s;
+}
+
+main .profile.rolling h2 .char:nth-child(3) {
+  -webkit-animation-delay: 0.06s;
+          animation-delay: 0.06s;
+}
+
+main .profile.rolling h2 .char:nth-child(4) {
+  -webkit-animation-delay: 0.08s;
+          animation-delay: 0.08s;
+}
+
+main .profile.rolling h2 .char:nth-child(5) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+main .profile.rolling h2 .char:nth-child(6) {
+  -webkit-animation-delay: 0.12s;
+          animation-delay: 0.12s;
+}
+
+main .profile.rolling h2 .char:nth-child(7) {
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
 }
 
 main .profile .profile-contents {
@@ -434,12 +524,75 @@ main .profile .profile-contents .profile-text p {
 }
 
 main .skills {
-  background-color: #fff;
+  background-color: #ccc;
   color: #000;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  padding-bottom: 4%;
 }
 
-main .skills div {
-  margin-bottom: 4%;
+main .skills .container h2 {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 8%;
+}
+
+main .skills .container h2 .removeItem {
+  color: #777;
+}
+
+main .skills .container h2 .showItem {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main .skills .container h2 .char {
+  display: inline-block;
+}
+
+main .skills .container > div {
+  margin-bottom: 5%;
+}
+
+main .skills.rolling {
+  background-color: #fff;
+}
+
+main .skills.rolling h2 .char {
+  -webkit-animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+          animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+main .skills.rolling h2 .char:nth-child(1) {
+  -webkit-animation-delay: 0.02s;
+          animation-delay: 0.02s;
+}
+
+main .skills.rolling h2 .char:nth-child(2) {
+  -webkit-animation-delay: 0.04s;
+          animation-delay: 0.04s;
+}
+
+main .skills.rolling h2 .char:nth-child(3) {
+  -webkit-animation-delay: 0.06s;
+          animation-delay: 0.06s;
+}
+
+main .skills.rolling h2 .char:nth-child(4) {
+  -webkit-animation-delay: 0.08s;
+          animation-delay: 0.08s;
+}
+
+main .skills.rolling h2 .char:nth-child(5) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+main .skills.rolling h2 .char:nth-child(6) {
+  -webkit-animation-delay: 0.12s;
+          animation-delay: 0.12s;
 }
 
 main .skills h3 {
@@ -473,12 +626,65 @@ main .skills ul li p {
 }
 
 main .works {
-  background-color: #333;
+  background-color: #555;
   color: #fff;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
 }
 
 main .works h2 {
-  margin-bottom: 12%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 12.5%;
+}
+
+main .works h2 .removeItem {
+  color: #ccc;
+}
+
+main .works h2 .showItem {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main .works h2 .char {
+  display: inline-block;
+}
+
+main .works.rolling {
+  background-color: #333;
+}
+
+main .works.rolling h2 .char {
+  -webkit-animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+          animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+main .works.rolling h2 .char:nth-child(1) {
+  -webkit-animation-delay: 0.02s;
+          animation-delay: 0.02s;
+}
+
+main .works.rolling h2 .char:nth-child(2) {
+  -webkit-animation-delay: 0.04s;
+          animation-delay: 0.04s;
+}
+
+main .works.rolling h2 .char:nth-child(3) {
+  -webkit-animation-delay: 0.06s;
+          animation-delay: 0.06s;
+}
+
+main .works.rolling h2 .char:nth-child(4) {
+  -webkit-animation-delay: 0.08s;
+          animation-delay: 0.08s;
+}
+
+main .works.rolling h2 .char:nth-child(5) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
 }
 
 main .works ul {
@@ -550,13 +756,76 @@ main .works ul .work .work-text2 {
 }
 
 main .contact {
-  background-color: #fff;
+  background-color: #ccc;
   color: #000;
   position: relative;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
 }
 
 main .contact h2 {
+  overflow: hidden;
+  position: relative;
   margin-bottom: 18.3%;
+}
+
+main .contact h2 .removeItem {
+  color: #777;
+}
+
+main .contact h2 .showItem {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main .contact h2 .char {
+  display: inline-block;
+}
+
+main .contact.rolling {
+  background-color: #fff;
+}
+
+main .contact.rolling h2 .char {
+  -webkit-animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+          animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+main .contact.rolling h2 .char:nth-child(1) {
+  -webkit-animation-delay: 0.02s;
+          animation-delay: 0.02s;
+}
+
+main .contact.rolling h2 .char:nth-child(2) {
+  -webkit-animation-delay: 0.04s;
+          animation-delay: 0.04s;
+}
+
+main .contact.rolling h2 .char:nth-child(3) {
+  -webkit-animation-delay: 0.06s;
+          animation-delay: 0.06s;
+}
+
+main .contact.rolling h2 .char:nth-child(4) {
+  -webkit-animation-delay: 0.08s;
+          animation-delay: 0.08s;
+}
+
+main .contact.rolling h2 .char:nth-child(5) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+main .contact.rolling h2 .char:nth-child(6) {
+  -webkit-animation-delay: 0.12s;
+          animation-delay: 0.12s;
+}
+
+main .contact.rolling h2 .char:nth-child(7) {
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
 }
 
 main .contact .contact-text p {

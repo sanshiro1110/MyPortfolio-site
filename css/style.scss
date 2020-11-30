@@ -3,6 +3,26 @@ $cWhite: #fff;
 $bBlack: #333;
 $cGray1: #777;
 $cGray2: #555;
+$cGray3: #ccc;
+
+@keyframes kf-string-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes kf-rolling-animation {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -184,11 +204,13 @@ ul {
 
 main > div {
   height: 100vh;
+  padding-top: 45px;
 
   & h2 {
-    padding-top: 6.2%;
     font-size: 30px;
     margin-bottom: 10%;
+    line-height: 1.2;
+    letter-spacing: 5px;
   }
 }
 
@@ -248,20 +270,46 @@ main .home {
   }
 }
 
-@keyframes kf-string-animation {
-  0% {
-    opacity: 0;
-    transform: translateY(-70%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 main .profile {
-  background-color: $bBlack;
+  background-color: $cGray2;
   color: $cWhite;
+  transition: all 0.6s;
+
+  & h2 {
+    overflow: hidden;
+    position: relative;
+
+    & .removeItem {
+      color: $cGray3;
+    }
+
+    & .showItem {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    & .char {
+      display: inline-block;
+    }
+  }
+
+  &.rolling {
+    background-color: $bBlack;
+
+    h2 {
+      .char {
+        animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0.0, 0.3, 1.0) forwards;
+
+        @for $i from 1 through 7 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.02s;
+          }
+        }
+      }
+    }
+  }
+
 
   & .profile-contents {
     display: flex;
@@ -289,12 +337,54 @@ main .profile {
 }
 
 main .skills {
-  background-color: $cWhite;
+  background-color: $cGray3;
   color: $cBlack;
+  transition: all 0.6s;
+  padding-bottom: 4%;
 
-  & div {
-    margin-bottom: 4%;
+  & .container {
+
+    & h2 {
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 8%;
+
+      & .removeItem {
+        color: $cGray1;
+      }
+
+      & .showItem {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      & .char {
+        display: inline-block;
+      }
+    }
+
+    & > div {
+      margin-bottom: 5%;
+    }
   }
+
+  &.rolling {
+    background-color: $cWhite;
+
+    & h2 {
+      .char {
+        animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0.0, 0.3, 1.0) forwards;
+
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.02s;
+          }
+        }
+      }
+    }
+  }
+
   & h3 {
     margin-bottom: 10px;
     letter-spacing: 1px;
@@ -321,12 +411,46 @@ main .skills {
 }
 
 main .works {
-  background-color: $bBlack;
+  background-color: $cGray2;
   color: $cWhite;
+  transition: all 0.6s;
 
   & h2 {
-    margin-bottom: 12%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 12.5%;
+
+    & .removeItem {
+      color: $cGray3;
+    }
+
+    & .showItem {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    & .char {
+      display: inline-block;
+    }
   }
+
+  &.rolling {
+    background-color: $bBlack;
+
+    & h2{
+      .char {
+        animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0.0, 0.3, 1.0) forwards;
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.02s;
+          }
+        }
+      }
+    }
+  }
+
   & ul {
     display: flex;
 
@@ -389,12 +513,43 @@ main .works {
 }
 
 main .contact {
-  background-color: $cWhite;
+  background-color: $cGray3;
   color: $cBlack;
   position: relative;
+  transition: all 0.6s;
 
   & h2 {
+    overflow: hidden;
+    position: relative;
     margin-bottom: 18.3%;
+
+    & .removeItem {
+      color: $cGray1;
+    }
+
+    & .showItem {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    & .char {
+      display: inline-block;
+    }
+  }
+
+  &.rolling {
+    background-color: $cWhite;
+
+    & h2 .char {
+      animation: kf-rolling-animation 0.6s cubic-bezier(0.7, 0.0, 0.3, 1.0) forwards;
+
+      @for $i from 1 through 7 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.02s;
+        }
+      }
+    }
   }
 
   & .contact-text p {
