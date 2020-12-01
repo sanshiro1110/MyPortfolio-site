@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6,p {
 
 a {
   text-decoration: none;
+  text-underline-position: under;
   &:visited {
     color: inherit;
   }
@@ -389,12 +390,13 @@ main .skills {
     margin-bottom: 10px;
     letter-spacing: 1px;
   }
+
   & ul {
     display: flex;
     justify-content: center;
 
     & li {
-      margin-right: 5%;
+      margin-right: 3%;
 
       & img {
         width: 25px;
@@ -501,12 +503,26 @@ main .works {
           margin-bottom: 5.7%;
           font-size: 15px;
         }
+
         & span {
           font-size: 13px;
         }
       }
       & .work-text2 {
         display: none;
+      }
+
+      & .goGithub {
+        display: block;
+        font-size: 15px;
+        text-decoration: underline;
+        transition: transform 0.5s;
+        width: 200px;
+        margin: 40px auto 0;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
   }
@@ -770,7 +786,7 @@ main .contact {
       flex-wrap: wrap;
 
       & li{
-       margin-bottom: 10px;
+        margin: 0 0 10px 0;
       }
     }
   }

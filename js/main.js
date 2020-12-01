@@ -12,7 +12,7 @@ function noScroll(event) {
   event.preventDefault();
 }
 
-//文字列にspanタグをつける関数
+//文字列にspanタグをつける
 function spanAdd(string) {
   let concutString = '';
   for(let c of string) {
@@ -89,22 +89,22 @@ function stringAnimation() {
 
   window.addEventListener('scroll', () => {
     let scroll = document.documentElement.scrollTop;
-    if(scroll > (profileHeight / 2)) {
+    if(scroll > 300) {
       profile.classList.add('rolling');
     } else {
       profile.classList.remove('rolling');
     }
-    if(scroll > (profileHeight + (skillsHeight - profileHeight) / 2)) {
+    if(scroll > (profileHeight) + 300) {
       skills.classList.add('rolling');
     } else {
       skills.classList.remove('rolling');
     }
-    if(scroll > (skillsHeight + (worksHeight - skillsHeight) / 2)) {
+    if(scroll > (skillsHeight) + 300) {
       works.classList.add('rolling');
     } else {
       works.classList.remove('rolling');
     }
-    if(scroll > (worksHeight + (contactHeight - worksHeight) / 2.5)) {
+    if(scroll > (worksHeight) + 300) {
       contact.classList.add('rolling');
     } else {
       contact.classList.remove('rolling');
@@ -115,7 +115,6 @@ function stringAnimation() {
 //menuクリック時、menuの項目クリック時のアニメーション
 function menuClickAnimation() {
 
-  //menuButtonクリック時
   menuButton.addEventListener('click', () => {
     menuContent.classList.toggle('open');
     menuButton.classList.toggle('open');
@@ -125,7 +124,6 @@ function menuClickAnimation() {
     menuButton.classList.remove('open');
   });
 
-  //menuの項目クリック時にwindowを移動させる処理
   const toProfile = document.querySelectorAll('#to-profile');
   const toSkills = document.querySelectorAll('#to-skills');
   const toWorks = document.querySelectorAll('#to-works');
